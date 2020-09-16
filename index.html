@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style_2.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Tagama - Home</title>
 </head>
 
 <body>
-    <header>
-        <!-- LOGO -->
-        <div id="logo" class="flex">
-            <img src="images/Logo.png" id=logoimg>            
-        </div>
-        <!-- NAV -->
-        <div class="flex" id="nav">
-            <ul id="navMenu">
-                <li class="inline-block navLinkSelected">WORK</li>
-                <li class="inline-block navLink">ABOUT</li>
-                <li class="inline-block navLink">AFTER 5 PM</li>
-            </ul>
-        </div>
-        <div class="inline-block" id="contact">
-            <ul id="contactMenu">
-                <li class="inline-block navLink">adrian.tagama@gmail.com</li>
-                <li class="inline-block navLink">|</li>
-                <li class="inline-block navLink">LinkedIn</li>
-                <li class="inline-block navLink">|</li>
-                <li class="inline-block navLink">Resume</li>
-            </ul>
-        </div>
-    </header>
+    <div id="mainNav">
+        <header>
+            <!-- LOGO -->
+            <div id="logo" class="flex">
+                <img src="images/Logo.png" id=logoimg>            
+            </div>
+            <!-- NAV -->
+            <div class="flex" id="nav">
+                <ul id="navMenu">
+                    <li class="inline-block navLinkSelected">WORK</li>
+                    <li class="inline-block navLink">ABOUT</li>
+                    <li class="inline-block navLink">AFTER 5 PM</li>
+                </ul>
+            </div>
+            <div class="inline-block" id="contact">
+                <ul id="contactMenu">
+                    <li class="inline-block navLink">adrian.tagama@gmail.com</li>
+                    <li class="inline-block navLink">|</li>
+                    <li class="inline-block navLink">LinkedIn</li>
+                    <li class="inline-block navLink">|</li>
+                    <li class="inline-block navLink">Resume</li>
+                </ul>
+            </div>
+        </header>
+    </div>
     
     <section id="hero">
         <div id="heroTag">
             <p id="tagline">
-                Hi, friend! I’m Adrian Tagama, 
-            a freelance UX/UI Designer that takes an empathetic approach toward making things 
-            work for people like <b>you</b> and I
+                Hi, friend! I’m Adrian Tagama, a freelance 
+                UX/UI Designer that takes an empathetic approach 
+                toward making things work for people like <b>you</b> and I
             </p>
         </div>
     </section>
@@ -63,8 +65,8 @@
        </div>
 
         <!-- OREGON DMV CARD -->
-        <div class="oregonGrid">
-            <div class="card-info oregon">
+        <div id="oregonGrid">
+            <div class="card-info">
                 <p class="card-info-title white">
                     Oregon DMV
                 </p>
@@ -77,11 +79,13 @@
                 </p>
                 <button class="button white">VIEW CASE STUDY</button>
             </div>
+            <div id="oregonDesktop"></div>
+            <div id="oregonMobile"></div>
         </div>
 
         <!-- SILICON BEACH SOCIAL CARD -->
-        <div class="sbsGrid">
-            <div class="card-info sbs">
+        <div id="sbsGrid">
+            <div class="card-info">
                 <p class="card-info-title black">
                     Silicon Beach Social
                 </p>
@@ -94,21 +98,17 @@
                 </p>
                 <button class="button">VIEW CASE STUDY</button>
             </div>
+            <div id="sbsAbout"></div>
+            <div id="sbsEvents"></div>
         </div>
 
-    <footer>
+    <footer class="grid">
         <p id="footerTagline">Let's Connect!</p>
         <p>adrian.tagama@gmail.com</p>
-        <ul>
-            <li class="inline-block">About</li>
-            <li class="inline-block">|</li>
-            <li class="inline-block">Skills</li>
-            <li class="inline-block">|</li>
-            <li class="inline-block">Work</li>
-            <li class="inline-block">|</li>
-            <li class="inline-block">LinkedIn</li>
-            <li class="inline-block">|</li>
-            <li class="inline-block">Resume</li>
+        <ul class="inline-block">
+            <li class="inline">LinkedIn</li>
+            <li class="inline">|</li>
+            <li class="inline">Resume</li>
         </ul>
     </footer>
 </body>

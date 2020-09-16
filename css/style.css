@@ -2,8 +2,14 @@ body {
     margin: 0;
     width: 100vw;
 }
+
 .inline-block {
     display: inline-block;
+    vertical-align: middle;
+}
+
+.inline {
+    display: inline;
     vertical-align: middle;
 }
 
@@ -11,15 +17,6 @@ body {
     display: flex;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
 ul {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 12pt;
@@ -47,11 +44,16 @@ button {
     color: white;
 }
 
+
 /* --------------------HEADER-------------------- */
+#mainNav {
+    position: fixed;
+    width: 100vw;
+    background-color: white;
+}
+
 header {
-    height: 100px;
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    height: auto;
     margin-left: 60px;
     margin-right: 60px;
     display: flex;
@@ -61,7 +63,7 @@ header {
 }
 
 #logoimg {
-    height: 100px;
+    height: 50px;
 }
 
 /* ----------HEADER-NAV---------- */
@@ -81,38 +83,57 @@ header {
     cursor: pointer;
 }
 
+.navLinkSelected {
+    width: auto;
+    margin: 10px;
+    cursor: pointer;
+    color: red;
+    font-weight: 700;
+}
+
 /* ----------HEADER-CONTACT---------- */
 #contact {
     margin-left: auto;
 }
 
 /* --------------------HOME-------------------- */
-#homeContent {
-    margin-top: 0px;
-    background-color: lightgray;
-}
 /* ----------HERO---------- */
 #hero {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr%;
+    grid-template-rows: 100%; */
+    height: 900px;
+    width: 100vw;
     background-color: lightgray;
-    height: 890px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     background-image: url("../images/hero-image.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.tagline {
-    width: 1336px;
-    font-size: 32pt;
-    margin-bottom: 275px;
+#heroTag {
+    display: flex;
+    justify-content: center;
+    padding-top: 250px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-/* -----------PROJECTS---------- */
+
+#tagline {
+    margin-bottom: 720px;
+    height: auto;
+    width: 1200px;
+    font-size: 36pt;
+    color: white;
+}
+
+/* ----------PROJECTS---------- */
 #projectGrid {
     display: grid;
-    grid-template-rows: 1000px;
+    grid-template-rows: repeat(3, 1000px);
     grid-template-columns: 100vw;
     grid-template-areas: 
         "wtGrid"
@@ -120,15 +141,10 @@ header {
         "sbsGrid";
 }
 
-
 .card-info {
-    margin-right: 60px;
-    height: 350px;
-    width: 400px;
-    overflow-wrap: normal;
+    padding-left: 60px;
+    padding-top: 30px;
     text-align: left;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-info-title {
@@ -148,92 +164,151 @@ header {
 
 .card-info-date {
     font-size: 12pt;
-    font-weight: lighter
+    font-weight: 300;
 }
 
-
-/* ----------WeTravel Card Styles---------- */
-.wtGrid {
+/* ----------WeTravel---------- */
+#wtGrid {
+    grid-area: wtGrid;
     background-color: #0079FE;
-    grid-template-rows: 1000px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
         "card-info wtHotel wtMockups";
 }
 
 #wtHotel {
+    grid-area: wtHotel;
     background-image: url("../images/WeTravel_Screenshot_Hotel.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 #wtMockups {
-    height: 600px;
-    align-self: center;
-    justify-self: flex-end;
+    grid-area: wtMockups;
+    background-image: url("../images/WeTravel_Mockups.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* ----------Oregon DMV Card Styles---------- */
-.oregon {
+/* ----------Oregon---------- */
+#oregonGrid {
+    grid-area: oregonGrid;
     background-color: #009D75;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "card-info oregonDesktop oregonMobile";
 }
 
-#dmvDesktop {
-    height: 500px;
-    align-self: center;
-    justify-self: flex-end;
-    margin-right: 100px;
+#oregonDesktop {
+    background-image: url("../images/oregon_desktop.png");
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-#dmvMobile {
-    height: 350px;
-    align-self: center;
-    margin-right: 400px;
-    margin-bottom: 2.5%;
+#oregonMobile {
+    background-image: url("../images/oregon_mobile.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* ----------SBS Card Styles---------- */
-.sbs {
+/* ----------Silicon Beach Social---------- */
+#sbsGrid {
+    grid-area: sbsGrid;
     background-color: #BCD9E3;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "card-info sbsAbout sbsEvents";
 }
 
 #sbsAbout {
-    height: 400px;
-    margin-right: 100px;
-    align-self: center;
+    grid-area: sbsAbout;
+    background-image: url("../images/sbs-about_1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #sbsEvents {
-    height: 400px;
-    margin-right: 200px;
-    align-self: center;
+    grid-area: sbsEvents;
+    background-image: url("../images/sbs-events_1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* --------------------FOOTER-------------------- */
+/* --------------------FOOTER-------------------- */
 footer {
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "footerTagline"
+        "footerP"
+        "footerUL";
     text-align: center;
-    background-color: #760000;
+    background-color: white;
     margin-top: -32px;
 }
 
 #footerTagline {
+    grid-area: footerTagline;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 24pt;
     font-weight: bold;
-    color: white;
-    padding-top: 20px;
+    color: black;
 }
 
 footer p {
-    color: white;
+    grid-area: footerP;
+    color: black;
 }
 footer ul {
+    display: table;
+    grid-area: footerUL;
     list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
+    color: black;
     text-align: center;
-    color: white;
-    padding-bottom: 20px;
 }
 
 footer ul li {
     padding: 10px;
-    color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    #wtGrid {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card-info"
+            "wtHotel"
+            "wtMockups"
+    }
+    #oregonGrid {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card-info"
+            "oregonDesktop"
+            "oregonMobile"
+    }
+    #sbsGrid {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card-info"
+            "sbsAbout"
+            "sbsEvents"
+    }
 }
