@@ -246,10 +246,45 @@ header {
     background-position: center;
 }
 
-/* --------------------FOOTER-------------------- */
+/* --------------------ABOUT PAGE-------------------- */
+.aboutContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 580px;
+    grid-template-areas: 
+        "aboutMe mePic";
+    justify-content: space-between;
+    white-space: nowrap;
+    padding-top: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.aboutMe {
+    grid-area: aboutMe;
+    white-space: normal;
+    text-align: justify;
+    width: 500px;
+    height: auto;
+}
+
+#mePic {
+    background-image: url("../images/me_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 5px lightgray;
+    grid-area: mePic;
+    height: auto;
+    margin-top: 20px;
+    margin-right: -20px;
+}
+
 /* --------------------FOOTER-------------------- */
 footer {
+    position: fixed;
+    bottom: 0;
     height: 200px;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
